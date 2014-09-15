@@ -1,8 +1,49 @@
 body {
-  background: #000;
+  font-family: 'Raleway', sans-serif;
+  background: #141414;
+  color: #fff;
 }
 canvas {
   position: absolute;
   top: 0;
   left: 0;
+}
+main {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+.avatar {
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  margin: 1rem;
+}
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1rem;
+}
+.about-me {
+  margin-top: 10%;
+}
+.about-me p {
+  width: 60%;
+  font-weight: 400;
+  margin: 0 auto;
+  padding: 20px 0;
+  border-top: 1px solid #434343;
+  border-bottom: 1px solid #434343;
 }
