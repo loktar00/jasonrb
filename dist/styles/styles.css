@@ -2,6 +2,7 @@ body {
   font-family: 'Raleway', sans-serif;
   background: #141414;
   color: #fff;
+  line-height: 1.4;
 }
 canvas {
   position: absolute;
@@ -40,6 +41,7 @@ h3 {
   margin-top: 10%;
 }
 .about-me p {
+  background: #141414;
   width: 60%;
   font-weight: 400;
   margin: 0 auto;

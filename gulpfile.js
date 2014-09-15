@@ -5,9 +5,10 @@ var gulp        = require('gulp'),
     connect     = require('gulp-connect'),
     uglify      = require('gulp-uglify'),
     less        = require('gulp-less'),
-    rename      = require('gulp-rename');
+    rename      = require('gulp-rename'),
+    deploy      = require("gulp-gh-pages");
 
-
+// bundle up our js
 gulp.task('browserify', function(cb) {
     return browserify('./dev/js/app.js').bundle()
         .on('error', function(err){
@@ -20,6 +21,7 @@ gulp.task('browserify', function(cb) {
         .pipe(connect.reload());
 });
 
+// less/css tasks
 gulp.task('less', function () {
     return gulp.src('dev/less/**/*.less')
         .pipe(less())
@@ -31,12 +33,14 @@ gulp.task('less', function () {
         .pipe(connect.reload());
 });
 
+// Copy our markup over to dist
 gulp.task('markup', function(){
     gulp.src('dev/*.html')
     .pipe(gulp.dest('./dist/'))
     .pipe(connect.reload());
 });
 
+// Gulp connect server
 gulp.task('webserver', function(){
     return connect.server({
         root: './dist',
@@ -44,7 +48,7 @@ gulp.task('webserver', function(){
     });
 });
 
-
+// watch for changes
 gulp.task('watcher', function(){
     var markupWatcher = gulp.watch(['dev/*.html'], ['markup']);
         markupWatcher.on('change', function(event){
@@ -60,6 +64,12 @@ gulp.task('watcher', function(){
         lessWatcher.on('change', function(event){
             console.log('file' + event.path + ' was ' + event.type + ', building css...');
         });
+});
+
+// Deploy to gh pages
+gulp.task('deploy', function () {
+    gulp.src("./dist/**/*")
+        .pipe(deploy());
 });
 
 gulp.task('default', ['watcher', 'webserver', 'browserify', 'less', 'markup']);
