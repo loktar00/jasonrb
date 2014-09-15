@@ -1,0 +1,22 @@
+{
+  "name": "jasonrb",
+  "version": "2.0.0",
+  "homepage": "http://jasonrb.com",
+  "authors": [
+    "Jason Brown <loktar69@hotmail.com>"
+  ],
+  "description": "Personal portfolio page",
+  "main": "gulpfile.js",
+  "keywords": [
+    "Jasonrb",
+    "portfolio"
+  ],
+  "license": "GPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

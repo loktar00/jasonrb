@@ -1,0 +1,33 @@
+{
+  "name": "jasonrb",
+  "version": "1.0.0",
+  "description": "Personal Portfolio site",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://loktar00@github.com/loktar00/jasonrb.git"
+  },
+  "keywords": [
+    "jasonrb",
+    "portfolio"
+  ],
+  "author": "Jason Brown @loktar00 loktar00@gmail.com",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/loktar00/jasonrb/issues"
+  },
+  "homepage": "https://github.com/loktar00/jasonrb",
+  "devDependencies": {
+    "browserify": "^5.11.2",
+    "gulp": "^3.8.8",
+    "gulp-connect": "^2.0.6",
+    "gulp-less": "^1.3.5",
+    "gulp-rename": "^1.2.0",
+    "gulp-streamify": "0.0.5",
+    "gulp-uglify": "^1.0.1",
+    "vinyl-source-stream": "^1.0.0"
+  }
+}
