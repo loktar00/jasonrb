@@ -163,8 +163,6 @@ function update() {
        }
    }
 
-   checkLines();
-
    render();
    requestAnimationFrame(update);
 }
@@ -309,24 +307,27 @@ function loseScreen() {
     if(loseBlock <= (boardHeight+1)){
         loseBlock++;
         requestAnimationFrame(loseScreen);
+    }else{
+        init();
     }
 }
 
 // adds the piece as part of the board
 function fillBoard(curPiece) {
-   var piece = curPiece.data,
-       posX = curPiece.x,
-       posY = curPiece.y;
+    var piece = curPiece.data,
+        posX = curPiece.x,
+        posY = curPiece.y;
 
-   for (var x = 0; x < 4; x++) {
+    for (var x = 0; x < 4; x++) {
        for (var y = 0; y < 4; y++) {
            if (piece[x][y] === 1) {
                board[x + posX][y + posY].data = 1;
                board[x + posX][y + posY].colors = curPiece.colors;
            }
        }
-   }
-   renderBoard();
+    }
+    checkLines();
+    renderBoard();
 }
 
 // rotate a piece
@@ -356,7 +357,7 @@ function newTetromino() {
    var pieceNum = Math.floor(Math.random() * tetrominos.length);
    curPiece.data    = tetrominos[pieceNum].data;
    curPiece.colors  = tetrominos[pieceNum].colors;
-   curPiece.x       = Math.floor(Math.random()*boardWidth-1);
+   curPiece.x       = Math.floor(Math.random()*(boardWidth-curPiece.data.length-0+1));
    curPiece.y       = -4;
 }
 
