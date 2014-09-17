@@ -107,7 +107,7 @@ Tetris.prototype.init = function(){
     var board       = this.board,
         boardWidth  = this.boardWidth,
         boardHeight = this.boardHeight,
-        halfHeight  = boardHeight,
+        halfHeight  = boardHeight/2,
         curPiece    = this.curPiece,
         x = 0, y = 0;
 

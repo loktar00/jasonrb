@@ -6,8 +6,9 @@ function ready(){
     window.removeEventListener( 'load', ready, false );
 
     var width = window.innerWidth,
-        boards = ~~((window.innerWidth/20)/10),
-        bWidth = 20 * Math.round((width/10)/20),
+        boardDiv = 20*Math.round(window.innerWidth/20),
+        boards = 8,
+        bWidth = boardDiv/boards,
         tetrisInstances = [];
 
     for(var w = 0; w < boards; w++){
